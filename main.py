@@ -22,7 +22,7 @@ new_price = st.number_input("Current Market Price (e.g. 106234.7)", value=106234
 
 if st.button("Calculate Additional Short Quantity"): 
   additional_qty = calculate_additional_position(old_price, old_qty, new_price, target_price)
-  if additional_qty is not None and additional_qty > 0: st.success(f"✅ You need to short {additional_qty} BTC more at ${new_price} to adjust your entry price to ${target_price}.")
+  if additional_qty is not None and additional_qty > 0: st.success(f"✅ You need to short {additional_qty} BTC more at ${new_price}   to adjust your entry price to ${target_price}.")
   elif additional_qty is not None and additional_qty <= 0: st.warning("⚠️ Your target entry price is lower than your current entry. You may need to close or reduce your position instead.") 
   else: st.error("❌ Error: Cannot divide by zero. Please check your inputs.")
 
